@@ -4,13 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "keys_fr.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-/* Uncomment this block if using an encoder */
-//&encoder {
-//    status = "okay";
-//};
 
 / {
     keymap {
@@ -23,12 +19,17 @@
             // | SHIFT |  Z   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |   /   |  RET  |
             // |       | LCTL | LALT | LGUI | LOWR |     SPACE    |  RAIS | LARW | DARW | UARW  |  RARW |
             bindings = <
-                &kp TAB  &kp Q    &kp W &kp E &kp R &kp T  &kp Y   &kp U  &kp I    &kp O   &kp P    &kp BSPC
-                &kp ESC  &kp A    &kp S &kp D &kp F &kp G  &kp H   &kp J  &kp K    &kp L   &kp SEMI &kp SQT
-                &kp LSHFT &kp Z    &kp X &kp C &kp V &kp B  &kp N   &kp M  &kp COMMA &kp DOT &kp SLASH &kp RET
-                &trans   &kp LCTL &kp LALT &kp LGUI &mo 1 &trans &kp SPACE &mo 2 &kp LEFT &kp DOWN &kp UP &kp RIGHT
+                &kp TAB    &kp FR_A         &kp FR_E        &kp FR_R       &kp FR_T             &kp FR_Y   &kp FR_U    &kp FR_U        &kp FR_I        &kp FR_O      &kp FR_EXLM   &kp BSPC
+                &kp TAB    &kp FR_Q         &kp FR_S        &kp FR_D       &kp FR_F             &kp FR_G   &kp FR_H    &kp FR_J        &kp FR_K        &kp FR_L      &kp M         &kp SQT
+                &kp LSHFT  &kp FR_W         &kp FR_X        &kp FR_C       &kp FR_V             &kp FR_B   &kp FR_N    &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN   &kp FR_EXLM   &kp RET
+                &kp ESC    &kp LCTL         &kp LALT        &kp LGUI       &mo 1                &trans     &kp SPACE   &mo 2           &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+
+   // &kp FR_A         &kp FR_Z        &kp FR_E       &kp FR_R             &kp FR_T   &kp FR_Y    &kp FR_U        &kp FR_I        &kp FR_O      &kp FR_P
+   // &hm LGUI FR_Q    &hm LALT FR_S   &hm LCTRL FR_D &hm LSHIFT FR_F      &kp FR_G   &kp H       &hm LSHIFT FR_J &hm LCTRL FR_K  &hm LALT FR_L &hm LGUI FR_M
+   // &kp FR_W         &kp FR_X        &kp FR_C       &kp FR_V             &kp FR_B   &kp FR_N    &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN   &kp FR_EXLM
+   //                  &lt _MEDIA ESC  &lt _NAVI SPC  &lt _NUMBER TAB      &lt _ACCENT RET  &lt _SYMBOL BSPC  &lt _ADJUST DEL
+
         };
 
         lower {
