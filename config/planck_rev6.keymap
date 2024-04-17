@@ -82,7 +82,7 @@
         };
         td11: tap_dance_11 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_10";
+            label = "TAP_DANCE_11";
             #binding-cells = <0>;
             tapping-term-ms = <100>;
             bindings = <&kp FR_2>, <&kp FR_SUP2>;
