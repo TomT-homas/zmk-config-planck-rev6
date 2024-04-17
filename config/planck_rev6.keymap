@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_9";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             bindings = <&kp FR_0>, <&kp FR_DEG>;
         };
         td10: tap_dance_10 {
@@ -79,13 +79,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FR_SLSH>, <&kp FR_BSLS>;
-        };
-        td11: tap_dance_11 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_11";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp FR_2>, <&kp FR_SUP2>;
         };
     };
 };
@@ -110,7 +103,7 @@
 
         lower {
             bindings = <
-                &trans          &kp FR_AMPR     &kp FR_HASH     &td3            &kp FR_CIRC     &kp FR_EURO     &kp FR_PLUS     &kp FR_1        &td11           &kp FR_3        &kp FR_ASTR     &trans
+                &trans          &kp FR_AMPR     &kp FR_HASH     &td3            &kp FR_CIRC     &kp FR_EURO     &kp FR_PLUS     &kp FR_1        &kp FR_2       &kp FR_3        &kp FR_ASTR     &trans
                 &trans          &td10           &td5            &td2            &td8            &kp FR_DLR      &td7            &kp FR_4        &kp FR_5        &kp FR_6        &kp FR_SLSH     &trans
                 &trans          &kp FR_AT       &kp FR_PIPE     &td4            &kp FR_DIAE     &kp FR_PND      &kp FR_EQL      &kp FR_7        &kp FR_8        &kp FR_9        &kp FR_PERC     &trans
                 &trans          &trans          &trans          &trans          &trans          &trans          &trans          &mo 3           &td9            &trans          &trans          &trans
