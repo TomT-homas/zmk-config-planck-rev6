@@ -9,6 +9,97 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_EACU>, <&kp FR_EGRV>;
+        };
+         td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_RPRN>, <&kp FR_LPRN>;
+        };
+         td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_RBRC>, <&kp FR_LBRC>;
+        };
+         td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_RCBR>, <&kp FR_LCBR>;
+        };
+         td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_RABK>, <&kp FR_LABK>;
+        };
+        td6: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_QUOT>, <&kp FR_DQUO>;
+        };
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_MINS>, <&kp FR_UNDS>;
+        };
+        td8: tap_dance_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_8";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_QUOT>, <&kp FR_DQUO>;
+        };
+        td9: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp FR_0>, <&kp FR_DEG>;
+        };
+        td10: tap_dance_10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_10";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_SLSH>, <&kp FR_BSLS>;
+        };
+        td11: tap_dance_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_10";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp FR_2>, <&kp FR_SUP2>;
+        };
+    };
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -19,34 +110,36 @@
             // | SHIFT |  Z   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |   /   |  RET  |
             // |       | LCTL | LALT | LGUI | LOWR |     SPACE    |  RAIS | LARW | DARW | UARW  |  RARW |
             bindings = <
-                &kp TAB    &kp FR_A         &kp FR_E        &kp FR_R       &kp FR_T             &kp FR_Y   &kp FR_U    &kp FR_U        &kp FR_I        &kp FR_O      &kp FR_EXLM   &kp BSPC
-                &kp TAB    &kp FR_Q         &kp FR_S        &kp FR_D       &kp FR_F             &kp FR_G   &kp FR_H    &kp FR_J        &kp FR_K        &kp FR_L      &kp M         &kp SQT
-                &kp LSHFT  &kp FR_W         &kp FR_X        &kp FR_C       &kp FR_V             &kp FR_B   &kp FR_N    &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN   &kp FR_EXLM   &kp RET
-                &kp ESC    &kp LCTL         &kp LALT        &kp LGUI       &mo 1                &trans     &kp SPACE   &mo 2           &kp LEFT        &kp DOWN      &kp UP        &kp RIGHT
+                &kp TAB         &kp FR_A        &kp FR_E        &kp FR_R        &kp FR_T        &kp FR_Y        &kp FR_U        &kp FR_U        &kp FR_I        &kp FR_O        &kp FR_EXLM     &kp BSPC
+                &kp CLCK        &kp FR_Q        &kp FR_S        &kp FR_D        &kp FR_F        &kp FR_G        &kp FR_H        &kp FR_J        &kp FR_K        &kp FR_L        &kp FR_M        &kp DEL
+                &kp LSHFT       &kp FR_W        &kp FR_X        &kp FR_C        &kp FR_V        &kp FR_B        &kp FR_N        &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN     &kp FR_EXLM     &kp RSHFT
+                &kp ESC         &kp LCTL        &kp LALT        &kp LGUI        &mo 1           &trans          &kp SPC         &mo 2           &kp RALT        &kp LEFT        &kp RIGHT       &kp RET
             >;
-
-   // &kp FR_A         &kp FR_Z        &kp FR_E       &kp FR_R             &kp FR_T   &kp FR_Y    &kp FR_U        &kp FR_I        &kp FR_O      &kp FR_P
-   // &hm LGUI FR_Q    &hm LALT FR_S   &hm LCTRL FR_D &hm LSHIFT FR_F      &kp FR_G   &kp H       &hm LSHIFT FR_J &hm LCTRL FR_K  &hm LALT FR_L &hm LGUI FR_M
-   // &kp FR_W         &kp FR_X        &kp FR_C       &kp FR_V             &kp FR_B   &kp FR_N    &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN   &kp FR_EXLM
-   //                  &lt _MEDIA ESC  &lt _NAVI SPC  &lt _NUMBER TAB      &lt _ACCENT RET  &lt _SYMBOL BSPC  &lt _ADJUST DEL
-
         };
 
         lower {
             bindings = <
-                &kp LS(GRAVE) &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5) &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp DEL
-                &kp DEL &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
-                &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &kp LS(HASH) &kp LS(BSLH) &kp HOME &kp END &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP
+                &trans          &kp FR_AMPR     &kp FR_HASH     &td3            &kp FR_CIRC     &kp FR_EURO     &kp FR_PLUS     &kp FR_1        &td11           &kp FR_3        &kp FR_ASTR     &trans
+                &trans          &td10           &td5            &td2            &td8            &kp FR_DLR      &td7            &kp FR_4        &kp FR_5        &kp FR_6        &kp FR_SLSH     &trans
+                &trans          &kp FR_AT       &kp FR_PIPE     &td4            &kp FR_DIAE     &kp FR_PND      &kp FR_EQL      &kp FR_7        &kp FR_8        &kp FR_9        &kp FR_PERC     &trans
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &mo 3           &td9            &trans          &trans          &trans
             >;
         };
 
         raise {
             bindings = <
-                &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-                &kp DEL &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
-                &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &kp HASH &kp BSLH &kp PG_UP &kp PG_DN &trans
-                &sys_reset &bootloader &trans &trans &trans &trans &trans &trans &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP
+                &trans          &kp FR_AGRV     &none           &td1            &none           &none           &none           &kp FR_UGRV     &kp UP          &none           &none           &trans
+                &trans          &none           &none           &none           &none           &none           &none           &kp LEFT        &kp DOWN        &kp RIGHT       &none           &trans
+                &trans          &none           &none           &kp FR_CCED     &none           &none           &kp FR_TILD     &none           &none           &none           &none           &trans
+                &trans          &trans          &trans          &trans          &mo 3           &trans          &trans          &trans          &trans          &trans          &trans          &trans
+            >;
+        };
+        adjust {
+            bindings = <
+                &trans          &kp F10         &kp F1          &kp F2          &kp F3          &kp PSCRN       &kp K_REDO      &kp K_PASTE     &kp C_BRI_UP    &kp K_VOL_UP    &kp K_PP        &trans
+                &trans          &kp F11         &kp F4          &kp F5          &kp F6          &kp SLCK        &kp K_UNDO      &kp K_COPY      &kp C_BRI_DN    &kp K_VOL_DN    &kp K_MUTE      &trans
+                &trans          &kp F12         &kp F7          &kp F8          &kp F9          &none           &kp K_CUT       &none           &none           &none           &none           &trans
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
     };
