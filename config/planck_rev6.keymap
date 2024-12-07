@@ -94,7 +94,7 @@
             // | SHIFT |  Z   |  X   |  C   |  V   |  B   |   N   |  M    |  ,   |  .   |   /   |  RET  |
             // |       | LCTL | LALT | LGUI | LOWR |     SPACE    |  RAIS | LARW | DARW | UARW  |  RARW |
             bindings = <
-                &kp TAB         &kp FR_A        &kp FR_E        &kp FR_R        &kp FR_T        &kp FR_Y        &kp FR_U        &kp FR_U        &kp FR_I        &kp FR_O        &kp FR_EXLM     &kp BSPC
+                &kp FR_B         &kp FR_M        &kp FR_E        &kp FR_R        &kp FR_T        &kp FR_Y        &kp FR_U        &kp FR_U        &kp FR_I        &kp FR_O        &kp FR_EXLM     &kp BSPC
                 &kp CLCK        &kp FR_Q        &kp FR_S        &kp FR_D        &kp FR_F        &kp FR_G        &kp FR_H        &kp FR_J        &kp FR_K        &kp FR_L        &kp FR_M        &kp DEL
                 &kp LSHFT       &kp FR_W        &kp FR_X        &kp FR_C        &kp FR_V        &kp FR_B        &kp FR_N        &kp FR_COMM     &kp FR_SCLN     &kp FR_COLN     &kp FR_EXLM     &kp RSHFT
                 &kp ESC         &kp LGUI        &kp LALT        &kp LCTL        &lt SPC 1       &trans          &lt SPC 2       &trans          &kp RALT        &kp LEFT        &kp RIGHT       &kp RET
